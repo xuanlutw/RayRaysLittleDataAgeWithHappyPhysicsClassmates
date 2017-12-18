@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://leafletjs.com/examples/quick-start/example-basic.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>RayRay's Little Data Age With Happy Physics Classmates</title>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="http://leafletjs.com/examples/quick-start/docs/images/favicon.ico">
+
+   
+    <link rel="stylesheet" href="./leaflet/leaflet.css" />
+    <script src="./leaflet/leaflet.js"></script>
+
+	
+</head>
+<body>
+
+<div id="mapid" style="width: 700px; height: 500px; position: relative;" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
+	  
+<form name=control_form>
+    Follow Ray!
+	<select name=set_zone onChange=Javascript:set_zone_change();>
+		<option value=1 selected>Yes
+		<option value=0>No
+	</select></br>
+    Number of points
+	<select name=load onChange=Javascript:load_change();>
+		<option value=1>1
+		<option value=5 selected>5
+		<option value=10>10
+		<option value=30>30
+		<option value=60>60
+		<option value=300>300
+	</select></br>
+	Update every
+	<select name=update_time onChange=Javascript:update_time_change();>
+		<option value=1000>1
+		<option value=2000 selected>2
+		<option value=5000>5
+		<option value=10000>10
+		<option value=30000>30
+		<option value=60000>60
+	</select>
+	second(s)
+</form>
+<b id='updated'></b></br>
+Welcome to join Lab102!
+
+<script  language="JavaScript" src = "./map.js"></script> 
+
+</body>
+</html>
