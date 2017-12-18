@@ -21,6 +21,38 @@ app.get("/", function(req, res) {
     });
 });
 
+app.get("/WhereAreYouNow", function(req, res) {
+    res.sendfile(__dirname + '/WhereAreYouNow.html', function(err) {
+        if (err){
+            res.send(404);
+            var to_write = "[" + new Date() + "] " + req.ip + " GET " +req.url + " " + req.protocol + " 404";
+            console.log(to_write);
+            fs.appendFile(__dirname + '/log', to_write + '\n', function(err){});
+        }
+        else{
+            var to_write = "[" + new Date() + "] " + req.ip + " GET " +req.url + " " + req.protocol + " 200";
+            console.log(to_write);
+            fs.appendFile(__dirname + '/log', to_write + '\n', function(err){});
+        }
+    });
+});
+
+app.get("/trail", function(req, res) {
+    res.sendfile(__dirname + '/trail.html', function(err) {
+        if (err){
+            res.send(404);
+            var to_write = "[" + new Date() + "] " + req.ip + " GET " +req.url + " " + req.protocol + " 404";
+            console.log(to_write);
+            fs.appendFile(__dirname + '/log', to_write + '\n', function(err){});
+        }
+        else{
+            var to_write = "[" + new Date() + "] " + req.ip + " GET " +req.url + " " + req.protocol + " 200";
+            console.log(to_write);
+            fs.appendFile(__dirname + '/log', to_write + '\n', function(err){});
+        }
+    });
+});
+
 app.get(/(.*)\.(jpg|gif|png|ico|css|json|js|ttxt)/i, function(req, res) {
     res.sendfile(__dirname + "/" + req.params[0] + "." + req.params[1], function(err) {
         if (err){
